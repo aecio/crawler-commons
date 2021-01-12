@@ -214,3 +214,8 @@ http://foo.com/index?q=web+crawler+!, http://foo.com/index?q=web+crawler+%21
 
 # remove question mark when there are no query parameters
 http://example.com/?, http://example.com/
+
+# non-standard percent-encoding (issue #135)
+http://www.hurriyet.com.tr/index/?d=20160328&p=13&s=ni%u011fde, http://www.hurriyet.com.tr/index/?d=20160328&p=13&s=ni%C4%9Fde
+http://www.hurriyet.com.tr/index/?d=20160328&p=13&s=ni%u01, http://www.hurriyet.com.tr/index/?d=20160328&p=13&s=ni%25u01
+http://www.hurriyet.com.tr/index/?d=20160328&p=13&s=ni%ukkkkde, http://www.hurriyet.com.tr/index/?d=20160328&p=13&s=ni%25ukkkkde
